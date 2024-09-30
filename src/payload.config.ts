@@ -82,6 +82,17 @@ export default buildConfig({
       ],
     },
   },
+  access: {
+    read: ({ req: { user } }) => {
+      return user ? true : false
+    },
+    create: ({ req: { user } }) => {
+      return user && user.role === 'admin'
+    },
+    update: ({ req: { user } }) => {
+      return user && user.role === 'admin'
+    },
+  },
   // This config helps us configure global or default features that the other editors can inherit
   editor: lexicalEditor({
     features: () => {
