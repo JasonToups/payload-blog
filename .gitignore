@@ -3,8 +3,6 @@ dist / media
 node_modules
 .DS_Store
 .env
-.env.development.local
-.env.production
 .next
 .vercel
 
