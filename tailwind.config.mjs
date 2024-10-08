@@ -131,7 +131,7 @@ const tailwindConfig = {
             '--tw-prose-body': 'var(--text)',
             '--tw-prose-headings': 'var(--text)',
             h1: {
-              fontSize: '4rem',
+              fontSize: '4.5rem',
               marginBottom: '0.25em',
               fontFamily: theme('fontFamily.genty').join(', '),
             },
