@@ -9,7 +9,20 @@ const tailwindConfig = {
     './src/**/*.{ts,tsx}',
   ],
   darkMode: ['selector', '[data-theme="dark"]'],
-  plugins: [require('tailwindcss-animate'), require('@tailwindcss/typography')],
+  plugins: [
+    require('tailwindcss-animate'),
+    require('@tailwindcss/typography'),
+    function ({ addUtilities }) {
+      const newUtilities = {
+        '.text-shadow-scaled': {
+          '--tw-text-size': '1em', // Default value; will be overridden by font size
+          textShadow: 'calc(0.08 * var(--tw-text-size)) calc(0.08 * var(--tw-text-size)) black',
+        },
+      }
+
+      addUtilities(newUtilities, ['responsive'])
+    },
+  ],
   prefix: '',
   safelist: [
     'lg:col-span-4',
@@ -95,7 +108,9 @@ const tailwindConfig = {
       fontFamily: {
         mono: ['var(--font-geist-mono)'],
         sans: ['var(--font-geist-sans)'],
-        serif: ['var(--font-geist-serif)'],
+        serif: ['Sunflower', 'serif'],
+        genty: ['Genty', 'serif'],
+        dillan: ['Dillan', 'serif'],
       },
       keyframes: {
         'accordion-down': {
@@ -107,6 +122,9 @@ const tailwindConfig = {
           to: { height: '0' },
         },
       },
+      textShadow: {
+        custom: 'calc(0.075 * 4rem) calc(0.075 * 4rem) black',
+      },
       typography: ({ theme }) => ({
         DEFAULT: {
           css: {
@@ -114,8 +132,8 @@ const tailwindConfig = {
             '--tw-prose-headings': 'var(--text)',
             h1: {
               fontSize: '4rem',
-              fontWeight: '600',
               marginBottom: '0.25em',
+              fontFamily: theme('fontFamily.genty').join(', '),
             },
           },
         },
