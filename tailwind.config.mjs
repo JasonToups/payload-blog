@@ -1,8 +1,10 @@
 /** @type {import('tailwindcss').Config} */
-export default {
+const tailwindConfig = {
   content: [
     './pages/**/*.{ts,tsx}',
     './components/**/*.{ts,tsx}',
+    './Header/*.{ts,tsx}',
+    './Footer/*.{ts,tsx}',
     './app/**/*.{ts,tsx}',
     './src/**/*.{ts,tsx}',
   ],
@@ -93,6 +95,7 @@ export default {
       fontFamily: {
         mono: ['var(--font-geist-mono)'],
         sans: ['var(--font-geist-sans)'],
+        serif: ['var(--font-geist-serif)'],
       },
       keyframes: {
         'accordion-down': {
@@ -111,7 +114,7 @@ export default {
             '--tw-prose-headings': 'var(--text)',
             h1: {
               fontSize: '4rem',
-              fontWeight: 'normal',
+              fontWeight: '600',
               marginBottom: '0.25em',
             },
           },
@@ -120,3 +123,5 @@ export default {
     },
   },
 }
+
+export default tailwindConfig

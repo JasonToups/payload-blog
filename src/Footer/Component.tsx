@@ -6,6 +6,7 @@ import type { Footer } from '@/payload-types'
 
 import { ThemeSelector } from '@/providers/Theme/ThemeSelector'
 import { CMSLink } from '@/components/Link'
+import { Logo } from '@/components/Logo/Logo'
 
 export async function Footer() {
   const footer: Footer = await getCachedGlobal('footer')()
@@ -17,11 +18,7 @@ export async function Footer() {
       <div className="container py-8 gap-8 flex flex-col md:flex-row md:justify-between">
         <Link className="flex items-center" href="/">
           <picture>
-            <img
-              alt="Payload Logo"
-              className="max-w-[6rem] invert-0"
-              src="https://raw.githubusercontent.com/payloadcms/payload/main/packages/payload/src/admin/assets/images/payload-logo-light.svg"
-            />
+            <Logo />
           </picture>
         </Link>
 
