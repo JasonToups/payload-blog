@@ -16,7 +16,8 @@ const tailwindConfig = {
       const newUtilities = {
         '.text-shadow-scaled': {
           '--tw-text-size': '1em', // Default value; will be overridden by font size
-          textShadow: 'calc(0.08 * var(--tw-text-size)) calc(0.08 * var(--tw-text-size)) black',
+          textShadow:
+            'calc(0.085 * var(--tw-text-size)) calc(0.085 * var(--tw-text-size)) hsl(var(--background))',
         },
       }
 
@@ -123,7 +124,7 @@ const tailwindConfig = {
         },
       },
       textShadow: {
-        custom: 'calc(0.075 * 4rem) calc(0.075 * 4rem) black',
+        scaled: 'calc(0.075 * 1em) calc(0.075 * 1em) hsl(var(--background))',
       },
       typography: ({ theme }) => ({
         DEFAULT: {
@@ -132,8 +133,11 @@ const tailwindConfig = {
             '--tw-prose-headings': 'var(--text)',
             h1: {
               fontSize: '4.5rem',
+              '--tw-text-size': '1em',
               marginBottom: '0.25em',
               fontFamily: theme('fontFamily.genty').join(', '),
+              textShadow:
+                'calc(0.075 * var(--tw-text-size)) calc(0.075 * var(--tw-text-size)) hsl(var(--background))',
             },
           },
         },
