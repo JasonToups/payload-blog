@@ -19,7 +19,7 @@ export const RelatedPosts: React.FC<RelatedPostsProps> = (props) => {
     <div className={clsx('container', className)}>
       {introContent && <RichText content={introContent} enableGutter={false} />}
 
-      <div className="flex flex-col items-stretch gap-4 md:flex-row md:gap-8">
+      <div className="flex flex-col items-stretch justify-evenly gap-4 md:flex-row md:gap-8">
         {docs?.map((doc, index) => {
           if (typeof doc === 'string') return null
 
