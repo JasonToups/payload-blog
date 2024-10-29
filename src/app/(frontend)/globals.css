@@ -12,6 +12,16 @@
     font-size: auto;
     font-weight: auto;
   }
+  hr {
+    width: 75%;
+    height: 2px; /* Thickness of the line */
+    border: none;
+    background-color: hsl(var(--border)); /* Uses theme-based border color */
+    margin: 2rem 0; /* Add vertical spacing */
+
+    /* Optional: rounded ends for a softer look */
+    border-radius: var(--radius);
+  }
 
   :root {
     --background: 0 0% 100%;
